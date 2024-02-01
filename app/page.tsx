@@ -22,6 +22,7 @@ export default async function Home() {
 
       <div className="flex flex-row w-[400px]   bg-slate-500 items-center justify-evenly py-5 rounded-2xl">
         {!session && <LogginButton />}
+        {/* {!session && <LogginButton provider="google" />} */}
         {session?.user?.name && <SignOutButton />}
       </div>
     </main>
