@@ -1,0 +1,13 @@
+version: '3.5'  # Version de la syntaxe Docker Compose utilisée.
+
+services:
+  app:
+    build:
+      context: .  # Contexte de construction, dans ce cas, le répertoire courant.
+      dockerfile: Dockerfile  # Spécifie le fichier Dockerfile à utiliser.
+    container_name: next-auth  # Nom du conteneur.
+    ports:
+      - '3000:3000'  # Mappage des ports, 'port_host:port_container'.
+    volumes:
+      - .:/app  # Montage du volume, 'chemin_host:chemin_container'.
+      - /app/node_modules  # Montage d'un volume pour les modules Node.js.
